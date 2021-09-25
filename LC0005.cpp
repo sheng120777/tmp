@@ -22,3 +22,4 @@ public:
         return s.substr((resId - resMx) / 2, resMx - 1);
     }
 };
+
