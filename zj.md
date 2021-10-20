@@ -20,7 +20,9 @@ signed main(){
 	}
 }
 ```
-p#include<bits/stdc++.h>
+pB
+```
+#include<bits/stdc++.h>
 using namespace std;
 #define int long long
 #define endl "\n"
@@ -40,6 +42,8 @@ signed main(){
         }
     }
 }
+```
+pC
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -67,7 +71,7 @@ signed main(){
     }
 }
 ```
-
+pD
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -93,7 +97,7 @@ signed main(){
     }
 }
 ```
-
+pE
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
@@ -127,7 +131,7 @@ signed main(){
     }
 }
 ```
-
+pF
 ```cpp
 #include<bits/stdc++.h>
 using namespace std;
