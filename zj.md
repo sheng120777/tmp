@@ -1,4 +1,5 @@
-```
+pA
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
@@ -19,8 +20,27 @@ signed main(){
 	}
 }
 ```
+p#include<bits/stdc++.h>
+using namespace std;
+#define int long long
+#define endl "\n"
 
-```
+signed main(){
+
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    int m,n;
+    while(cin>>m>>n and m!=0 and n!=0){
+        if(m>n){
+            cout<<"Unfair"<<endl;
+        }
+        else{
+            cout<<"Fair"<<endl;
+        }
+    }
+}
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
@@ -48,7 +68,7 @@ signed main(){
 }
 ```
 
-```
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
@@ -74,7 +94,7 @@ signed main(){
 }
 ```
 
-```
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
@@ -108,7 +128,7 @@ signed main(){
 }
 ```
 
-```
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
@@ -130,7 +150,7 @@ signed main(){
 }
 ```
 
-```
+```cpp
 #include<bits/stdc++.h>
 using namespace std;
 #define int long long
