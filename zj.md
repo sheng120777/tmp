@@ -158,3 +158,40 @@ signed main(){
     }
 }
 ```
+
+pG
+```cpp
+#include<bits/stdc++.h>
+using namespace std;
+#define int long long
+#define endl "\n"
+
+
+signed main(){
+    bool flag=true;
+    int k;
+    long long n;
+    long long c=2;
+    cin>>k;
+    for (int i=1;i<=k;i++){ 
+        cin>>n;
+        if (n<2){
+            cout<<n<<"非質數"<<endl;
+            continue;
+        }
+        while (c*c<=n){ 
+            if (n%c==0){
+                cout<<n<<"非質數"<<endl;
+                flag=false;
+                break;
+            }
+             c+=1;
+        }
+        if (flag){ 
+            cout<<n<<"是質數"<<endl;
+        }
+        c=2;
+        flag=true;
+    }
+}
+```
