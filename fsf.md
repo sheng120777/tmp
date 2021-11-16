@@ -40,3 +40,53 @@ signed main(){
     }
 }
 ```
+
+
+```cpp
+#pragma GCC optimize("Ofast")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
+#pragma GCC optimize("unroll-loops")
+#include<bits/stdc++.h>
+using namespace std;
+#define int long long
+#define endl "\n"
+#define inf 2e18
+#define maxn 10000005
+#define mod 1000000007
+
+signed main() { 
+
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    string a,b;
+    cin>>a>>b;
+    stringstream A(a);
+    stringstream B(b);
+    string Ta[50];
+    string Tb[50];
+    string k;
+    int n,m;
+
+    int i=0;
+    while(getline(A,k,':')){
+        Ta[i]=k;
+        i++;
+    }
+    n=stoi(Ta[0])*60+stoi(Ta[1]);
+
+    int j=0;
+    while(getline(B,k,':')){
+        Tb[j]=k;
+        j++;
+    }
+    m=stoi(Tb[0])*60+stoi(Tb[1]);
+    if(m>n){
+        cout<<m-n<<endl;
+    }
+    else{
+        m+=1440;
+        cout<<m-n<<endl;
+    }
+}
+```
