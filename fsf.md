@@ -14,6 +14,35 @@ signed main() {
 
     ios::sync_with_stdio(0);
     cin.tie(0);
+
+    string s;
+    vector<char>vec;
+    getline(cin,s);
+    for(int i=0;i<s.length();i++){
+        vec.push_back(s[i]+7);
+    }
+    for(int i=0;i<vec.size();i++){
+        cout<<vec[i]<<"";
+    }
+}
+```
+
+```cpp
+#pragma GCC optimize("Ofast")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
+#pragma GCC optimize("unroll-loops")
+#include<bits/stdc++.h>
+using namespace std;
+#define int long long
+#define endl "\n"
+#define inf 2e18
+#define maxn 10000005
+#define mod 1000000007
+
+signed main() { 
+
+    ios::sync_with_stdio(0);
+    cin.tie(0);
     int a[26]={1,10,19,28,37,46,55,64,39,73,82,2,11,20,48,29,38,47,56,65,74,83,21,3,12,30};
     string s;
     cin>>s;
