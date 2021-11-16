@@ -10,6 +10,41 @@ using namespace std;
 #define maxn 10000005
 #define mod 1000000007
 
+signed main(){
+
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    string s;
+    getline(cin,s);
+    string k;
+    vector<string>vec;
+    int i=0;
+    stringstream S(s);
+    int ans=0;
+    while(getline(S,k,',')){
+        vec.push_back(k);
+        i++;
+    }
+    for(int i=0;i<vec.size();i++){
+        ans+=abs(stoi(vec[i])-2);
+    }
+    cout<<ans;
+}
+```
+
+```cpp
+#pragma GCC optimize("Ofast")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
+#pragma GCC optimize("unroll-loops")
+#include<bits/stdc++.h>
+using namespace std;
+#define int long long
+#define endl "\n"
+#define inf 2e18
+#define maxn 10000005
+#define mod 1000000007
+
 signed main() { 
 
     ios::sync_with_stdio(0);
