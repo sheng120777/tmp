@@ -10,6 +10,41 @@ using namespace std;
 #define maxn 10000005
 #define mod 1000000007
 
+signed main() { 
+
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    string s;
+    cin>>s;
+    bool flag=true;
+    int sum=0;
+    for(int i=0;i<s.length();i++){
+        if(!isalpha(s[i])){
+            flag=false;
+            cout<<"";
+        }
+        else{
+            sum+=toupper(s[i])-'A'+1;
+        }
+    }
+    cout<<sum;
+}
+```
+
+
+```cpp
+#pragma GCC optimize("Ofast")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
+#pragma GCC optimize("unroll-loops")
+#include<bits/stdc++.h>
+using namespace std;
+#define int long long
+#define endl "\n"
+#define inf 2e18
+#define maxn 10000005
+#define mod 1000000007
+
 signed main(){
 
     ios::sync_with_stdio(0);
