@@ -7,6 +7,48 @@ using namespace std;
 #define int long long
 #define endl "\n"
 #define inf 2e18
+#define maxn 10000005
+#define mod 1000000007
+
+signed main(){
+
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    map<char,int>mp;
+    string a,b;
+    while(getline(cin,a) and getline(cin,b)){
+        int n=a.length();
+        sort(a.begin(),a.end());
+        sort(b.begin(),b.end());
+        
+        bool flag=true;
+        for(int i=0;i<a.length();i++){
+            if(a[i]!=b[i]){
+                flag=false;
+                break;
+            }
+        }
+        if(flag){
+            cout<<"Yes"<<endl;
+        }
+        else{
+            cout<<"No"<<endl;
+        }
+        //cout<<a<<endl<<b<<endl;
+    }
+}
+```
+
+```cpp
+#pragma GCC optimize("Ofast")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
+#pragma GCC optimize("unroll-loops")
+#include<bits/stdc++.h>
+using namespace std;
+#define int long long
+#define endl "\n"
+#define inf 2e18
 #define maxn 10005
 #define mod 100003
 
