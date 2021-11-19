@@ -18,6 +18,44 @@ signed main(){
 
     map<char,int>mp;
     string s="GHIJABCOPQRSTUDEFVWXYZKLMNghijklabpqrstcdefmnxyzouvw ,(:)'\".-!?[]{}#%&*0123456789";
+    //length=81
+    for(int i=0;i<s.length();i++){
+        mp[s[i]]=i;
+    }
+    string input_s;
+    getline(cin,input_s);
+    int n=mp[input_s[input_s.length()-1]];
+    for(int i=0;i<input_s.length();i++){
+        if(mp[input_s[i]]+n>80){
+            cout<<s[mp[input_s[i]]-81+n];
+        }
+        else{
+            cout<<s[mp[input_s[i]]+n];
+        }
+    }
+}
+```
+
+```cpp
+#pragma GCC optimize("Ofast")
+#pragma GCC target("sse,sse2,sse3,ssse3,sse4,popcnt,abm,mmx,avx,avx2,fma")
+#pragma GCC optimize("unroll-loops")
+#include<bits/stdc++.h>
+using namespace std;
+#define int long long
+#define endl "\n"
+#define inf 2e18
+#define maxn 10005
+#define mod 100003
+
+
+signed main(){
+
+    ios::sync_with_stdio(0);
+    cin.tie(0);
+
+    map<char,int>mp;
+    string s="GHIJABCOPQRSTUDEFVWXYZKLMNghijklabpqrstcdefmnxyzouvw ,(:)'\".-!?[]{}#%&*0123456789";
     for(int i=0;i<s.length();i++){
         mp[s[i]]=i;
     }
