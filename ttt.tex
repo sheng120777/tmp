@@ -1,0 +1,302 @@
+\documentclass[a4paper]{article}
+\usepackage{fontspec}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{color,xcolor}
+\usepackage{longtable}
+\usepackage{array,booktabs}
+\def\oo{\nolinebreak[4]\hspace{.3em}\raise.7ex\hbox{。}\hspace{-0.3em}}
+\def\pp{\nolinebreak[4]\hspace{.3em}\raise.6ex\hbox{，}\hspace{-0.3em}}
+\def\dd{\nolinebreak[4]\hspace{.3em}\raise.8ex\hbox{、}\hspace{-0.1em}}
+\def\mm{\nolinebreak[4]\hspace{.3em}\raise.3ex\hbox{；}\hspace{0.3em}}
+\def\kk{\nolinebreak[4]\hspace{.3em}\raise.3ex\hbox{：}\hspace{-0.3em}}
+\setmainfont{SimSun}
+\usepackage[margin=2cm]{geometry}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=4
+}
+
+
+\begin{document}
+
+    \newpage
+    \thispagestyle{empty}
+    \large
+    \vspace{20cm}\begin{center}
+        \hspace{-1em}投稿類別\kk 資訊類\\[3cm]
+        篇名\kk \\
+        加密貨幣量化交易\\[5cm]
+        作者\kk \\
+        柯盛乾\oo 高雄師範大學附屬高級中學\oo 高二信班\\[3cm]
+        指導老師\kk \\
+        老師
+    \end{center}
+
+
+
+    \newpage
+    \thispagestyle{plain}
+    \small\hspace{17em}加密貨幣量化交易
+    \setcounter{page}{1}
+    \large
+
+    壹\dd 前言\\  
+
+    \hspace{-1.2em}一\dd 研究動機\\
+    
+
+    \hspace{0.8em}近幾年加密貨幣的市值快速上升\pp 加密貨幣市場的浮動很大\pp 操作的機會也\\
+    \hspace{1em}相對較多\pp 但是隨浮動大而來的還有風險\oo 一個浮動大的市場常會讓經驗不足的\\
+    交易者無法冷靜思考市場的方向\pp 或是做出不理性的交易策略\oo 除此之外\pp 因為\\
+    市場每天24小時都在運作\pp 在睡覺時可能錯失良好的交易機會\oo 再加上平時要上\\
+    課\pp 無法時時盯盤\oo 種種原因引發我對程式交易的研究\pp 希望藉此做出一套全自\\
+    動且可盈利的交易機器人\\[0.5cm]
+
+    \hspace{-1.2em}二\dd 研究目的\\
+
+    \hspace{0.8em}應用所學\pp 跨領域結合\pp 我希望結合程式與金融\pp 在過程中邊做邊學\pp 也累\\
+    積一些實作成品\pp 強化自己的興趣\pp 進而將它當作專業之一\\
+
+    \hspace{-1.2em}三\dd 研究步驟\\
+
+    \vspace{-2em}\begin{figure}[H]
+        \centering
+        \graphicspath{pic.jpg}
+        \includegraphics[scale=0.35]{pic.jpg}
+    \end{figure}
+
+    \vspace{-1.5em}貳\dd 正文\\
+
+    一\dd 研究設備\\
+
+    \vspace{-1em}\hspace{10.5em}表一 設備\dd 軟體明細表\\
+
+    \vspace{-0.5em}\hspace{6em}\begin{tabular}{cc}
+        \toprule  
+        設備名稱& 規格\\
+        \midrule 
+        中央處理器 CPU &  intel core i5\\
+        記憶體 RAM &  16GB\\
+        作業系統 & window10\\
+        程式語言 & python3.7(64-bit)\\
+        編輯環境 & visual studio code 1.64\\
+        看盤軟體 & TradingView1.22\\
+        \bottomrule 
+    \end{tabular}\\
+
+    二\dd 指標\dd 策略介紹\\
+
+    (一)ATR指標算法介紹\\
+    ATR指標(Average True Range)是構成supertrend指標的重要參數\pp 在了解supertrend的\\
+    算法前\pp 必須要知道ATR的算法\pp 在計算ATR指標時\pp 要先算出TR(True Range)這個數列\\
+    ATR和TR是由如下方式計算\kk 
+    \[
+        TR=MAX[(High-Low),abs(high-Close_{prev}),abs(Low-Close_{prev})]
+    \]
+    \[
+        AT\!R=(\frac{1}{n}) \sum_{i = 1}^{n}  (T\!R_i)  
+    \]
+    \[
+        (n表示AT\!R的週期\pp T\!R_i為該日的TR值)
+    \]
+
+
+    \newpage
+    \thispagestyle{plain}
+    \small\hspace{17em}加密貨幣量化交易
+    \chead{加密貨幣量化交易}
+    \setcounter{page}{2}
+    \large\\
+
+    
+    (二)supertrend指標算法介紹\\
+    supertrend是由ATR和一個常數multiplier組成\pp 計算方式如下\kk
+
+    \[
+        Up = (high + low) / 2 + multiplier  \times  ATR
+    \]
+    \[
+        Down = (high + low) / 2 – multiplier \times ATR
+    \]
+    當價格(收盤價)高於上軌時\pp 趨勢反轉\pp 下軌出現\oo 當價格(收盤價)低於下軌時\pp 
+    趨勢反轉\pp 上軌出現\pp 周而復始\oo 如下圖
+    
+    \vspace{2em}\begin{figure}[H]
+        \centering
+        \graphicspath{TV2.png}
+        \includegraphics[scale=0.9]{TV2.png}
+    \end{figure}
+    \hspace{8em}圖(一)supertrend在看盤軟體可視化
+
+(三)Heikin Ashi candle(平均k線)介紹\\
+    因為平均K線的算法不同\pp 看起來會更為平滑\pp 以下是平均K線的算法\\
+    和其可視化的表述
+    \[
+        HeikinAshi_{close}=\frac{Open_0+Close_0+High_0+Low_0}{4}
+    \]\\[-2em]
+    \[
+        HeikinAshi_{open}=\frac{H\!A_{Open_{-1}}+H\!A_{Close_{-1}}}{2}
+    \]
+    \[
+        HeikinAshi_{high}=MAX(High_0,H\!A_{Open_0},H\!A_{Close_0})
+    \]\\[-2em]
+    \[
+        HeikinAshi_{low}=min(Low_0,H\!A_{Open_0},H\!A_{Close_0})
+    \]
+    
+    \vspace{2em}\begin{figure}[H]
+        \centering
+        \graphicspath{TV3.png}
+        \includegraphics[scale=0.9]{TV3.png}
+    \end{figure}
+    \hspace{9em}圖(二)平均K線在看盤軟體可視化
+    
+
+
+\newpage
+\thispagestyle{plain}
+\small\hspace{17em}加密貨幣量化交易
+\chead{加密貨幣量化交易}
+\setcounter{page}{3}
+\large\\
+
+
+
+
+(四)策略雛型\\
+
+純粹使用K線的數據帶入所算出的supertrend並不是特別理想\pp 因此使用平均K線\\
+的開高低收當作supertrend的參數\pp 這樣所算出的supertrend也相對一致\oo\\
+對震盪的敏感度不會太強烈\pp 這樣也會比較好跟住市場趨勢\oo 圖(三)\dd 圖(四)是相同參數\dd \\
+相同時間\dd 相同交易對(AVAX/USDT)下\pp 一般K線與平均K線的對比案例
+
+\vspace{1em}\begin{figure}[H]
+    \graphicspath{TV7.png}
+    \hspace{3em}\includegraphics[scale=0.65]{TV7.png}
+    \hspace{1in}
+    \hspace{-3em}\includegraphics[scale=0.63]{TV6.png}
+\end{figure}
+\hspace{2em}圖(三)一般K線搭配supertrend \space \space \space \space \space \space \space \space \space \space 圖(四)平均K線搭配supertrend
+\\
+
+
+三\dd 平均K線與supertrend的python程式碼
+\vspace{1em}\hspace{10em}\lstset{style=mystyle}
+\begin{lstlisting}[language=Python]
+import pandas as pd
+import pandas_ta as ta  
+import numpy as np
+
+def Supertrend(df,high,low,close,atr_period,multiplier):
+
+    price_diffs = [ high-low, 
+                    high-close.shift(), 
+                    close.shift()-low]
+    true_range=pd.concat(price_diffs, axis=1)
+    true_range=true_range.abs().max(axis=1)
+    atr=true_range.ewm(alpha=1/atr_period,min_periods=atr_period).mean() 
+    hl2=(high+low)/2
+    final_upperband=upperband=hl2+(multiplier*atr)
+    final_lowerband=lowerband=hl2-(multiplier*atr)
+    
+    supertrend=[True]*len(df)
+    
+    for i in range(1,len(df.index)):
+        curr,prev=i,i-1
+        
+        if close[curr]>final_upperband[prev]:
+            supertrend[curr]=True
+        elif close[curr]<final_lowerband[prev]:
+            supertrend[curr]=False
+        else:
+            supertrend[curr]=supertrend[prev]
+            if supertrend[curr]==True and final_lowerband[curr]<final_lowerband[prev]:
+                final_lowerband[curr]=final_lowerband[prev]
+            if supertrend[curr]==False and final_upperband[curr]>final_upperband[prev]:
+                final_upperband[curr]=final_upperband[prev]
+
+        if supertrend[curr]==True:
+            final_upperband[curr]=np.nan
+        else:
+            final_lowerband[curr]=np.nan
+
+    return df.join(pd.DataFrame({
+        'Supertrend':supertrend,
+        'Final Lowerband':final_lowerband,
+        'Final Upperband':final_upperband
+    },index=df.index))
+
+
+def HA(df):
+    ha_df=ta.ha(df["open"], df["high"], df["low"],df["close"])
+    df=df.join(ha_df)
+    return df
+
+\end{lstlisting}
+\newpage
+\thispagestyle{plain}
+\small\hspace{17em}加密貨幣量化交易
+\chead{加密貨幣量化交易}
+\setcounter{page}{3}
+\large
+
+    
+    
+
+\newpage
+\thispagestyle{plain}
+\small\hspace{17em}加密貨幣量化交易
+\chead{加密貨幣量化交易}
+\setcounter{page}{5}
+\large\\
+
+\vspace{-5em}\begin{figure}[H]
+    \centering
+    \graphicspath{paper1.png}
+    \includegraphics[scale=0.7]{paper1.png}
+\end{figure}
+\end{document}
+
+\[
+    HeikinAshi_{close}=\frac{Open_0+Close_0+High_0+Low_0}{4}
+\]\\[-2em]
+\[
+    HeikinAshi_{open}=\frac{H\!A\!-\!Open_{-1}+H\!A\!-\!Close_{-1}}{2}
+\]
+\[
+    HeikinAshi_{high}=MAX(High_0,H\!A\!-\!Open_0,H\!A\!-\!Close_0)
+\]\\[-2em]
+\[
+    HeikinAshi_{low}=min(Low_0,H\!A\!-\!Open_0,H\!A\!-\!Close_0)
+\]
+\[
+    Up = (high + low) / 2 + multiplier  \times  ATR
+\]
+\[
+    Down = (high + low) / 2 – multiplier \times ATR
+\]
