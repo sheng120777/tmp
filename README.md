@@ -2,6 +2,8 @@
 <p align="center">
     <a alt="Python Versions">
         <img src="https://img.shields.io/pypi/pyversions/vectorbt.svg?logo=python&logoColor=white" /></a>
+	<a alt="Python Versions">
+        <img src="https://img.shields.io/pypi/pyversions/vectorbt.svg?logo=python&logoColor=white" /></a>
     <a href="https://github.com/polakowo/vectorbt/blob/master/LICENSE.md" alt="License">
         <img src="https://img.shields.io/badge/license-Fair%20Code-yellow" /></a>
     <a href="https://pypi.org/project/vectorbt" alt="PyPi">
